@@ -62,6 +62,7 @@
         <module>bukkit</module>
         <!-- <module>folia</module> Folia module requires Paper API, disabled for now -->
         <module>assembly</module>
+        <module>assembly-folia</module>
     </modules>
 
     <build>

@@ -27,6 +27,20 @@
             <version>${project.version}</version>
         </dependency> Folia module requires Paper API, disabled for now -->
 
+        <!-- AyCore (to be shaded) -->
+        <dependency>
+            <groupId>com.aystudio.core</groupId>
+            <artifactId>AyCore</artifactId>
+            <version>1.4.5-BETA</version>
+        </dependency>
+
+        <!-- NBT-API (to be shaded) -->
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api-plugin</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
         <!-- Spigot API (provided, not shaded) -->
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -40,6 +54,13 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.111.Final</version>
+        </dependency>
+
+        <!-- BungeeCord Chat API (to be shaded) -->
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.16-R0.4</version>
         </dependency>
     </dependencies>
 
@@ -59,6 +80,32 @@
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <finalName>GlobalMarket-${project.version}</finalName>
                             <outputDirectory>${project.parent.basedir}/build/libs</outputDirectory>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <relocations>
+                                <relocation>
+                                    <pattern>io.netty</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.netty</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>net.md_5.bungee</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.bungee</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.aystudio.core</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.aycore</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>de.tr7zw.nbtapi</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.nbtapi</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>

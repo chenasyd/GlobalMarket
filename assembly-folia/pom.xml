@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.upgrade.globalmarket</groupId>
+        <artifactId>GlobalMarket-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>GlobalMarket-assembly-folia</artifactId>
+    <packaging>jar</packaging>
+
+    <name>GlobalMarket Assembly (Folia)</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.upgrade.globalmarket</groupId>
+            <artifactId>GlobalMarket-bukkit</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- AyCore (to be shaded) -->
+        <dependency>
+            <groupId>com.aystudio.core</groupId>
+            <artifactId>AyCore</artifactId>
+            <version>1.4.5-BETA</version>
+        </dependency>
+
+        <!-- BungeeCord Chat API (to be shaded) -->
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.16-R0.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <finalName>GlobalMarket-Folia-${project.version}</finalName>
+                            <outputDirectory>${project.parent.basedir}/build/libs</outputDirectory>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <relocations>
+                                <relocation>
+                                    <pattern>net.md_5.bungee</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.bungee</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.aystudio.core</pattern>
+                                    <shadedPattern>com.upgrade.globalmarket.libs.aycore</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
