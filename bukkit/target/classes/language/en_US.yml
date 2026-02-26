@@ -69,3 +69,8 @@ status-text:
   loaded: "&aLoaded successfully."
   error: "&cAn exception has occurred."
   no-permission: "&cUnauthorized usage."
+
+# Shulker box preview related
+preview-title: "Preview: "
+preview-only-read: "You can only view the preview, cannot take items."
+rightKey: "&6▪ &fRight-click to view shulker box contents"

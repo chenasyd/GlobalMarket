@@ -35,7 +35,7 @@
         <dependency>
             <groupId>de.tr7zw</groupId>
             <artifactId>item-nbt-api-plugin</artifactId>
-            <version>2.12.2</version>
+            <version>2.14.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -76,6 +76,14 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- BungeeCord Chat API (for ChatColor) -->
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.16-R0.4</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

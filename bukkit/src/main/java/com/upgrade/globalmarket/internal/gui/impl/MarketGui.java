@@ -302,7 +302,7 @@ public class MarketGui extends AbstractGui {
             }
             // Add preview hint for shulker box
             if (itemStack.getType().name().contains("SHULKER_BOX")) {
-                lore.add(TextUtil.formatHexColor("&erightKey"));
+                lore.add(I18n.getOption("rightKey"));
             }
             itemMeta.setLore(lore);
         }
