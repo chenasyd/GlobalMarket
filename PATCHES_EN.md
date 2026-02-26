@@ -3,6 +3,12 @@
 > [!CAUTION]
 > There may be potential data security risks. Please manually back up your data before proceeding.
 
+## Author Information
+
+- **Author**: Blank038
+- **Source**: https://github.com/blank038/ServerMarket
+- **Homepage**: https://github.com/blank038
+
 When you encounter bugs during use that need to be fixed, make sure that ServerMarket already has a version with the fix
 before following the steps below. Update the plugin to the latest version and use the
 command `/market patch <patch number>` to apply the fix.

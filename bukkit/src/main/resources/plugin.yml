@@ -1,7 +1,8 @@
-name: ServerMarket
-main: com.blank038.servermarket.internal.plugin.ServerMarket
+name: GlobalMarket
+main: com.upgrade.globalmarket.internal.plugin.GlobalMarket
 authors:
   - Blank038
+  - chenasyd
 depend:
   - AyCore
   - NBTAPI
@@ -12,9 +13,9 @@ softdepend:
 version: @version@
 api-version: 1.13
 commands:
-  servermarket:
+  globalmarket:
     aliases:
       - market
       - sale
-    description: Command for ServerMarket.
+    description: Command for GlobalMarket.
 folia-supported: true

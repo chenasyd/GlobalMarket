@@ -1,0 +1,20 @@
+name: ServerMarket
+main: com.blank038.servermarket.internal.plugin.ServerMarket
+authors:
+  - Blank038
+depend:
+  - AyCore
+  - NBTAPI
+softdepend:
+  - Vault
+  - PlayerPoints
+  - NyEconomy
+version: 2.7.3
+api-version: 1.13
+commands:
+  servermarket:
+    aliases:
+      - market
+      - sale
+    description: Command for ServerMarket.
+folia-supported: true

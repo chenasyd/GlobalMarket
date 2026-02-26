@@ -1,0 +1,159 @@
+####################
+#  这是一个市场样例 (旧版本格式)  #
+####################
+# 市场源编号, 设定后请勿修改
+source_id: "exampleLegacy"
+# 支持的货币类型
+# 类型: Vault, PlayerPoints, NyEconomy货币名
+vault-type: "Vault"
+# 市场权限, 有权限才能 查看和上架
+permission: "market.example"
+# 市场展示名
+display-name: "&c全服市场"
+# 货币展示名
+economy-name: "金币"
+# 价格范围设定
+# 价格范围
+price:
+  min: 1
+  max: 2000000
+# 特定物品价格设定(判断: 物品类型、物品昵称、物品描述)
+extra-price:
+  DIAMOND: 1000-10000
+  "道具": 20000-30000
+# 上架物品是否公告
+sale-broadcast: true
+# 是否开启商品额外信息
+show-sale-info: true
+# 短写命令打开市场, 留空则表示不设定
+short-command: "ashop"
+# 玩家售出物品后的税率, 1% = 0.01
+# 权限: header.node(例如: servermarket.tax.default)
+# 默认玩家拥有 default 节点权限
+tax:
+  header: "servermarket.tax.sell"
+  node:
+    default: 0.1
+    vip: 0.05
+# 玩家上架物品后的税率, 1% = 0.01
+# 权限: header.node(例如: servermarket.tax.default)
+# 默认玩家拥有 default 节点权限
+shout-tax:
+  header: "servermarket.tax.shout"
+  node:
+    default: 0.1
+    vip: 0.05
+# 玩家上架物品数量限制(当前市场)
+# 权限: header.node(例如: servermarket.limit.count.default)
+# 默认玩家拥有 default 节点权限
+limit-count:
+  header: "servermarket.limit.count"
+  node:
+    default: 3
+    vip: 10
+# 日期格式
+simple-date-format: "yyyy/MM/dd HH:mm:ss"
+# 价格格式
+price-format: "%,.0f"
+# 商品超时时间, 单位: 秒
+effective_time: 259200
+# 物品上架黑名单
+black-list:
+  type:
+    - "STONE"
+  lore:
+    - "&f禁止上架"
+# 分类
+types:
+  - "all"
+  - "道具"
+######################
+#
+# 全球市场界面配置文件 (旧版本)
+#
+######################
+# 界面标题
+title: "&8全球市场面板"
+# 界面大小
+size: 54
+# 显示商品的槽位
+# 支持格式:
+#  - 数字(小)-数字(大) 例子: 0-44
+#  - 数字 例子: 0
+sale-item-slots: "9-44"
+# 商品物品名, 注意：如果需要使用译名则需注释或删掉此行
+sale-name: "&b%name%"
+# 物品信息
+sale-info:
+  - " "
+  - "&a售卖者: &f%seller%"
+  - "&a价格: &f%price%金币"
+  - "&a上架时间: &f%time%"
+# 界面物品设定
+items:
+  panel:
+    type: STAINED_GLASS_PANE
+    amount: 1
+    data: 15
+    name: " "
+    slot: 46,47,51,52,0,1,2,3,5,6,7,8
+    lore: [ ]
+  up:
+    type: paper
+    amount: 1
+    data: 0
+    name: "&f上一页"
+    slot: 45
+    action: up
+    lore: [ ]
+  down:
+    type: paper
+    amount: 1
+    data: 0
+    name: "&f下一页"
+    slot: 53
+    action: down
+    lore: [ ]
+  changeType:
+    type: STRING
+    amount: 1
+    data: 0
+    name: "&b切换分类"
+    slot: 48
+    action: "type"
+    lore:
+      - "&f"
+      - "&f当前: &7%saleType%"
+  changeSort:
+    type: BOOK
+    amount: 1
+    data: 0
+    name: "&b切换排序方式"
+    slot: 50
+    action: "sort"
+    lore:
+      - "&f"
+      - "&f当前: &7%sortType%"
+  store:
+    type: chest
+    amount: 1
+    data: 0
+    name: "&e个人仓库"
+    slot: 49
+    action: store
+    lore: [ ]
+  ex888:
+    type: chest
+    amount: 1
+    data: 0
+    name: "&e&l全球商店"
+    slot: 4
+    lore:
+      - "&6全球市场"
+      - "&6上架物品/ashop sell [价格]"
+      - "&6下架物品Shift + 右键"
+      - "&f"
+      - "&6服务器商品固定使用通用货币dollar"
+      - "&6下架后的物品会保存在个人仓库"
+      - "&6插件测试时间短，出现问题请立即报告管理员或服主"
+      - "&6群号: 测试环境"

@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.upgrade.globalmarket</groupId>
+        <artifactId>GlobalMarket-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>GlobalMarket-assembly</artifactId>
+    <packaging>jar</packaging>
+
+    <name>GlobalMarket Assembly</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.upgrade.globalmarket</groupId>
+            <artifactId>GlobalMarket-bukkit</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>com.upgrade.globalmarket</groupId>
+            <artifactId>GlobalMarket-folia</artifactId>
+            <version>${project.version}</version>
+        </dependency> Folia module requires Paper API, disabled for now -->
+
+        <!-- Spigot API (provided, not shaded) -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Netty (to be shaded) -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.111.Final</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <finalName>GlobalMarket-${project.version}</finalName>
+                            <outputDirectory>${project.parent.basedir}/build/libs</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

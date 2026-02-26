@@ -5,12 +5,18 @@
 * zh_CN [简体中文](README.md)
 * en [English](README_EN.md)
 
+## Author Information
+
+- **Author**: Blank038
+- **Source**: https://github.com/blank038/ServerMarket
+- **Homepage**: https://github.com/blank038
+
 ## ⭐ Dependencies
 
 + AyCore [Download](https://cdn.mc9y.com/files/AyCore/AyCore-1.2.1-BETA.jar)
 + NBTAPI [Download](https://www.spigotmc.org/resources/nbt-api.7939/)
 
-## ✨ Features
+## Features
 
 * Highly customizable GUI interface
 * Supports MySQL and YAML format data storage
@@ -22,11 +28,11 @@
 * Supports product categorization, product search, and product blacklist features
 * Supports setting price ranges for specific products or categories
 
-## 🔨 Patch
+## Patch
 
 [ServerMarket Patches](PATCHES_EN.md)
 
-## 🌱 Contributors
+## Contributors
 
 <a href="https://github.com/blank038/ServerMarket/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=blank038/ServerMarket&anon=1" alt="Contributors"/>
@@ -36,6 +42,6 @@
 
 [Locales Directory](https://github.com/blank038/ServerMarket/tree/master/bukkit/src/main/resources/language)
 
-## 📃 License
+## License
 
 [GPL v3.0](https://opensource.org/license/gpl-3-0/)

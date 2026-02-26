@@ -1,0 +1,48 @@
+# 支持: zh_CN, en_US, es_ES, fr_FR, ko_KR, ru_RU, tr_TR, th_TH
+language: "zh_CN"
+# 存储设定
+data-option:
+  # 存储类型, 支持: MySQL, YAML
+  type: YAML
+  # MySQL url, 例如 jdbc:mysql://127.0.0.1/minecraft 格式: jdbc:mysql://MySQL地址/数据库名
+  url: jdbc:mysql://localhost/minecraft?useSSL=false&useUnicode=true&characterEncoding=utf-8
+  # 数据库用户名
+  user: "root"
+  # 数据库密码
+  password: "root"
+  # 数据库读取超时打开数据锁时长, 2 = 1秒
+  time-out: 120
+  # 同步提示
+  pull-notify: true
+# 如果未填写市场名的话, 默认操作市场
+default-market: "example"
+# 是否启用命令短写帮助
+command-help: true
+# 通用参数设定
+settings:
+  # 玩家离线交易检测间隔, 单位: 秒
+  offline-transaction-interval: 60
+  # 下架商品是否返回玩家仓库(如果为 false 则直接给予下架的管理员)
+  restitution: true
+  # 商品刷新间隔, 单位: 秒
+  cache-update-interval: 10
+# 冷却设定, 单位: 秒
+cooldown:
+  action: 3
+# 税收流向账户, 参数类型: UUID
+tax-account: "UUID"
+# 跨服通知设定, 修改后需要重启服务器生效
+notify-option:
+  # 使用模式, 目前支持: self/MySQL, 未来会提供对 PostgreSQL/Redis 的支持
+  use: self
+  # 使用不同模式请配置对应参数
+  type:
+    self: { }
+    mysql:
+      url: jdbc:mysql://localhost/minecraft?useSSL=false&autoReconnect=true&autoReconnectForPools=true&useUnicode=true&characterEncoding=utf-8
+      user: root
+      password: root
+      # 每隔多少秒获取一次数据
+      fetch-interval: 10
+      # 每次获取多少秒内的数据
+      update-window: 30
